@@ -1,4 +1,10 @@
-﻿using System;
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="AddressBook.cs" company="Bridgelabz">
+//   Copyright © 2018 Company
+// </copyright>
+// <creator Name="Dheer Singh Meena"/>
+// --------------------------------------------------------------------------------------------------------------------
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -6,14 +12,14 @@ namespace HashTablesAndBinarySearchTree_Day_17
 {
     public class MyMapNode<K,V>
     {
-        // Class For Key Value Pair with data type structure
+        //Creating Class For Key Value Pair with data type structure
         public struct KeyValue<k,v>
         {
             // defining members elements with the properties.
             public k Key { get; set; }
             public v Value { get; set; }
         }
-        //Variable to store the size of the Linked list
+        // Defining a Variable to store the size of the Linked list
         private readonly int size;
         //A linked list implementing the functionality with storage type as a structure instance.
         private readonly LinkedList<KeyValue<K, V>>[] items;
@@ -64,16 +70,14 @@ namespace HashTablesAndBinarySearchTree_Day_17
         // Generic Method to Adds the specified key,value pair at the end of the linked list present at the position corresponding to the key.
         public void Add(K key, V value)
         {
-            /// Gets the position to the key.
+            // Gets the position to the key.
             int position = GetArrayPosition(key);
-            /// Getting the linked list present at the position
+            // Getting  the linked list present at the position.
             LinkedList<KeyValue<K, V>> linkedList = GetLinkedList(position);
-            KeyValue<K, V> item = new KeyValue<K, V>()
-            { Key = key, Value = value };
-            /// Adds the key-value pair at the end of the linked list
+            KeyValue<K, V> item = new KeyValue<K, V>() { Key = key, Value = value };
+            /// Adds the key-value pair at the end of the linked list.
             linkedList.AddLast(item);
             Console.WriteLine(item.Key + " " + item.Value);
-
         }
         // Generic Method to Remove a particular item from the Hash Table
         public void Remove(K key)
@@ -99,8 +103,7 @@ namespace HashTablesAndBinarySearchTree_Day_17
                 linkedList.Remove(foundItem);
             }
         }
-        // UC 1 : Prints the frequency of the specified value in the hashtable.
-        // UC 1 : Prints the frequency of the specified value in the hashtable.
+        // UC 1 : Ability to find  the frequency of the specified value in the hashtable.
         public void GetFrequencyOf(V value)
         {
             int count = 0;
