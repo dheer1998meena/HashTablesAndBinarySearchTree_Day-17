@@ -31,14 +31,14 @@ namespace HashTablesAndBinarySearchTree_Day_17
         }
 
         /// <summary>
-        ///UC4- Inset the element in the specified node depending upon the value passed by user as item
+        ///UC1- Inset the element in the specified node depending upon the value passed by user as item
         /// </summary>
         /// <param name="item"></param>
         public void Insert(T item)
         {
-            // Creating a currentNodeValue variable copying the value of nodeData into currentNodeValue
+            // Creating a currentNodeValue variable copying the value of nodeData into currentNodeValue.
             T currentNodeValue = this.nodeData;
-            //comparing if the value entered is greater than current node or less than 
+            //comparing if the value entered is greater than current node or less than. 
             if (currentNodeValue.CompareTo(item)>0)
             {
                 //if the item value less than currentNodeValue then adding into left tree
