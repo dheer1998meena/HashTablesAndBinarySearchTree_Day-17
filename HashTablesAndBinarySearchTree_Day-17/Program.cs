@@ -12,12 +12,23 @@ namespace HashTablesAndBinarySearchTree_Day_17
     {
         static void Main(string[] args)
         {
-            //UC1- Inset the element in the specified node depending upon the value passed by user as item
+            //UC2- Inset all the element in the specified node depending upon the value passed by user as item
             // Creating a instance object of MyBinaryTree.
             MyBinaryTree<int> binaryTree = new MyBinaryTree<int>(56);
             Console.WriteLine("Inserting item");
             binaryTree.Insert(30);
             binaryTree.Insert(70);
+            binaryTree.Insert(22);
+            binaryTree.Insert(40);
+            binaryTree.Insert(3);
+            binaryTree.Insert(16);
+            binaryTree.Insert(11);
+            binaryTree.Insert(60);
+            binaryTree.Insert(95);
+            binaryTree.Insert(65);
+            binaryTree.Insert(63);
+            binaryTree.Insert(67);
+            Console.WriteLine("Displaying Binary Tree");
             binaryTree.Display();
             binaryTree.GetSize();
             Console.ReadLine();

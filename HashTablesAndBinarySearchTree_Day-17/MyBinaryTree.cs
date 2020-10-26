@@ -45,7 +45,7 @@ namespace HashTablesAndBinarySearchTree_Day_17
                 if (this.leftTree == null)
                 {
                     this.leftTree = new MyBinaryTree<T>(item);
-                    Console.WriteLine("Inserting item on left is :" + item);
+                    Console.WriteLine("Inserting item on left is : " + item);
                 }
                 // Recursion remember first it will reach the end node and also traverse back to upper nodes
                 else
@@ -59,7 +59,7 @@ namespace HashTablesAndBinarySearchTree_Day_17
                 if (this.rightTree == null)
                 {
                     this.rightTree = new MyBinaryTree<T>(item);
-                    Console.WriteLine("Inserting item on right is" + item);
+                    Console.WriteLine("Inserting item on right is : " + item);
                 }
                 // Recursion remember first it will reach the end node and also traverse back to upper nodes
                 else
@@ -96,6 +96,8 @@ namespace HashTablesAndBinarySearchTree_Day_17
         public void GetSize()
         {
             Console.WriteLine("size" + "  " + (1 + this.leftCount + this.rightCount));
+            Console.WriteLine("Left count size  is :" + this.leftCount);
+            Console.WriteLine("Right count size is  :" + this.rightCount);
         }
     }
 }
