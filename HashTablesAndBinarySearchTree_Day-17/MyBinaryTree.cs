@@ -31,7 +31,7 @@ namespace HashTablesAndBinarySearchTree_Day_17
         }
 
         /// <summary>
-        ///UC1- Inset the element in the specified node depending upon the value passed by user as item
+        ///UC4- Inset the element in the specified node depending upon the value passed by user as item
         /// </summary>
         /// <param name="item"></param>
         public void Insert(T item)
