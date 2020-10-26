@@ -104,7 +104,7 @@ namespace HashTablesAndBinarySearchTree_Day_17
                 linkedList.Remove(foundItem);
             }
         }
-        // Generic Method to find frequency of words in large paragraph phrase
+        //UC2 Generic Method to find frequency of words in large paragraph phrase
         public int GetFrequency(V value)
         {
             int frequency = 0;
@@ -132,6 +132,30 @@ namespace HashTablesAndBinarySearchTree_Day_17
             Console.WriteLine("");
             Console.WriteLine("Words '{0}' appears {1} times", value, frequency);
             return frequency;
+        }
+        // UC3 Generic Method to Remove a particular word from large paragraph phrase
+        public void RemoveValue(V value)
+        {
+            // Iterating foreach loop to get the key value pair in the list
+            foreach (LinkedList<KeyValue<K, V>> li in items)
+            {
+                if (li == null)
+                    continue;
+                // iterating for each loop to get each object in the list
+                foreach (KeyValue<K, V> obj in li)
+                {
+                    if (obj.Equals(null))
+                    {
+                        continue;
+                    }
+                    // if object matches the value then Removing it
+                    if (obj.Value.Equals(value))
+                    {
+                        Remove(obj.Key);
+                        break;
+                    }
+                }
+            }
         }
     }
 }
