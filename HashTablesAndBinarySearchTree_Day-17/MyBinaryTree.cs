@@ -95,9 +95,43 @@ namespace HashTablesAndBinarySearchTree_Day_17
         /// </summary>
         public void GetSize()
         {
-            Console.WriteLine("size" + "  " + (1 + this.leftCount + this.rightCount));
+            Console.WriteLine(" Total size" + "  " + (1 + this.leftCount + this.rightCount));
             Console.WriteLine("Left count size  is :" + this.leftCount);
             Console.WriteLine("Right count size is  :" + this.rightCount);
+        }
+        /// <summary>
+        ///  UC3- Ability to search an element  whether the element is present in the binary tree or not
+        /// </summary>
+        /// <param name="element"></param>
+        /// <param name="node"></param>
+        /// <returns></returns>
+        public bool Search(T element, MyBinaryTree<T> node)
+        {
+            //checking for the node first if not null
+            if (node == null)
+            {
+                Console.WriteLine("Element is not present in the Binary tree is {0}",  element);
+                return false;
+            }
+            // checking for the node data if not equal to element
+            if (node.nodeData.Equals(element))
+            {
+                Console.WriteLine("Element is present in the Binary tree is {0}", element);
+                return true;
+            }
+            else
+            {
+                Console.WriteLine("we are currently on node {0}", node.nodeData);
+            }
+            //then comparing the nodedata with element to search in either left tree or right tree 
+            if (node.nodeData.CompareTo(element) > 0)
+            {
+                return Search(element, node.leftTree);
+            }
+            else
+            {
+                return Search(element, node.rightTree);
+            }
         }
     }
 }
