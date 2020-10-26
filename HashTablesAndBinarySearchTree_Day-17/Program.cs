@@ -12,20 +12,26 @@ namespace HashTablesAndBinarySearchTree_Day_17
     {
         static void Main(string[] args)
         {
-            // Creating an object of MyMapNode Class
-            // size of the hash table is 5
-            MyMapNode<string, string> hash = new MyMapNode<string, string>(5);
-            Console.WriteLine("Adding KeyValue pair");
-            hash.Add("0", "To");
-            hash.Add("1", "be");
-            hash.Add("2", "or");
-            hash.Add("3", "not");
-            hash.Add("4", "to");
-            hash.Add("5", "be");
-            Console.WriteLine("Getting the value of index 3: " + hash.Get("3"));
-            Console.WriteLine("Getting the value of index 1: " + hash.Get("1"));
-            // UC 1 : Ability to find  the frequency of the specified value in the hashtable.
-            hash.GetFrequencyOf("To");
+            // UC_2- Ability to find frequency of words in large paragraph phrase
+            // Creating object of MyMapNode Class
+            // size of hash table is 20
+            MyMapNode<string, string> hash = new MyMapNode<string, string>(20);
+            // Storing the sentence in the variable paragraph
+            string paragraph = "Paranoids are not paranoid because they are paranoid but because they keep putting themselves deliberately into paranoid avoidable situations";
+            // spliting the words of the phrase and storing each word in the Array String
+            string[] paragraphWords = paragraph.Split(' ');
+            // Getting the length of the Array String
+            int paragraphLength = paragraphWords.Length;
+            // Itreating along each word and adding it to hash set
+            for (int i = 0; i < paragraphLength; i++)
+            {
+                hash.Add(Convert.ToString(i), paragraphWords[i]);
+            }
+            // iterating using for each loop to get the frequency of each word in the sentence
+            foreach (string word in paragraphWords)
+            {
+                hash.GetFrequency(word);
+            }
             Console.ReadLine();
         }
     }
