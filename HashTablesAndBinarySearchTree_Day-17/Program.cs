@@ -1,4 +1,10 @@
-﻿using System;
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="AddressBook.cs" company="Bridgelabz">
+//   Copyright © 2018 Company
+// </copyright>
+// <creator Name="Dheer Singh Meena"/>
+// --------------------------------------------------------------------------------------------------------------------
+using System;
 
 namespace HashTablesAndBinarySearchTree_Day_17
 {
@@ -18,7 +24,7 @@ namespace HashTablesAndBinarySearchTree_Day_17
             hash.Add("5", "be");
             Console.WriteLine("Getting the value of index 3: " + hash.Get("3"));
             Console.WriteLine("Getting the value of index 1: " + hash.Get("1"));
-            // UC1 - Ability to find frequency of words
+            // UC 1 : Ability to find  the frequency of the specified value in the hashtable.
             hash.GetFrequencyOf("To");
             Console.ReadLine();
         }
