@@ -18,6 +18,7 @@ namespace HashTablesAndBinarySearchTree_Day_17
             // defining members elements with the properties.
             public k Key { get; set; }
             public v Value { get; set; }
+            public int Frequency { get; set; }
         }
         // Defining a Variable to store the size of the Linked list
         private readonly int size;
@@ -103,26 +104,34 @@ namespace HashTablesAndBinarySearchTree_Day_17
                 linkedList.Remove(foundItem);
             }
         }
-        // UC 1 : Ability to find  the frequency of the specified value in the hashtable.
-        public void GetFrequencyOf(V value)
+        // Generic Method to find frequency of words in large paragraph phrase
+        public int GetFrequency(V value)
         {
-            int count = 0;
-            // Iterating using the foreach loop to get the key value of each item
-            foreach (var linkedList in items)
+            int frequency = 0;
+            // Iterating foreach loop to get the key value pair in the list
+            foreach (LinkedList<KeyValue<K, V>> list in items)
             {
-                // checking if key is not null 
-                if (linkedList != null)
+                if (list == null)
                 {
-                    // iterating using the foreach loop to get the value of the item in linked list
-                    foreach (var v in linkedList)
+                    continue;
+                }
+                // iterating for each loop to get each object in the list
+                foreach (KeyValue<K, V> obj in list)
+                {
+                    if (obj.Equals(null))
                     {
-                        // if the entered value matches the key value then incresing the frequency count
-                        if (v.Value.Equals(value))
-                            count++;
+                        continue;
+                    }
+                    // if object matches the value then increasing the frequency count 
+                    if (obj.Value.Equals(value))
+                    {
+                        frequency++;
                     }
                 }
             }
-            Console.WriteLine($"Frequency of '{value}'= {count}");
+            Console.WriteLine("");
+            Console.WriteLine("Words '{0}' appears {1} times", value, frequency);
+            return frequency;
         }
     }
 }
