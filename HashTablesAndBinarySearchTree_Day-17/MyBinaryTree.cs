@@ -50,6 +50,7 @@ namespace HashTablesAndBinarySearchTree_Day_17
                 // Recursion remember first it will reach the end node and also traverse back to upper nodes
                 else
                 {
+                    this.leftCount++;
                     this.leftTree.Insert(item);
                 }
             }
@@ -64,6 +65,7 @@ namespace HashTablesAndBinarySearchTree_Day_17
                 // Recursion remember first it will reach the end node and also traverse back to upper nodes
                 else
                 {
+                    this.rightCount++;
                     this.rightTree.Insert(item);
                 }
             }
