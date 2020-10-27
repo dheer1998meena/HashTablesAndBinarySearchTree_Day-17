@@ -30,6 +30,7 @@ namespace HashTablesAndBinarySearchTree_Day_17
             binaryTree.Insert(67);
             Console.WriteLine("Displaying Binary Tree");
             binaryTree.Display();
+            binaryTree.GetSize();
             Console.WriteLine("===============================");
             //UC3 - Ability to search an element  whether the element is present in the binary tree or not
             Console.WriteLine("Searching element");
